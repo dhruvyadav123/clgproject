@@ -1,0 +1,147 @@
+/* Navbar.css */
+
+/* General Navbar Styles */
+.navbar {
+  background-color: #1D4ED8; /* Blue-800 */
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+/* Logo */
+.nav-logo a {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-logo a:hover {
+  color: #FBBF24; /* Yellow-300 */
+}
+
+/* Desktop Links */
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #FBBF24; /* Yellow-300 */
+}
+
+/* Dropdown Styles */
+.nav-links .relative {
+  position: relative;
+}
+
+.nav-links .relative button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.nav-links .relative button:hover {
+  color: #FBBF24;
+}
+
+.nav-links .relative div {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: black;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.nav-links .relative div a {
+  padding: 8px 12px;
+  color: black;
+  font-weight: normal;
+  transition: background 0.2s;
+}
+
+.nav-links .relative div a:hover {
+  background: #E5E7EB; /* Gray-200 */
+}
+
+/* Mobile Menu Button */
+.open-sidebar-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.open-sidebar-btn:hover {
+  color: #FBBF24;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  background: #1E40AF; /* Blue-700 */
+  flex-direction: column;
+  padding: 8px 16px;
+}
+
+.mobile-menu a, 
+.mobile-menu button {
+  padding: 8px 0;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+
+.mobile-menu a:hover, 
+.mobile-menu button:hover {
+  color: #FBBF24;
+}
+
+/* Mobile Dropdown */
+.mobile-menu .pl-4 {
+  padding-left: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide desktop links */
+  }
+
+  .mobile-menu {
+    display: flex;
+    gap: 4px;
+  }
+}

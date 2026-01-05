@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar container */
+.navbar {
+  background-color: #ad3f07;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  font-family: Arial, sans-serif;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+/* Logo */
+.logo a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.logo a:hover {
+  color: #facc15;
+}
+
+/* Desktop Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links a:hover {
+  color: #facc15;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: white;
+  color: black;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+}
+
+.dropdown-menu a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-menu a:hover {
+  background-color: #e5e7eb;
+}
+
+/* Mobile Button */
+.mobile-menu-button {
+  display: none;
+}
+
+.mobile-menu-button button {
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Login buttons */
+.login-btn {
+  padding: 6px 14px;
+  background: #0fb078;
+  color: #b30065;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.signup-btn {
+  padding: 6px 14px;
+  background: #0080ff;
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: rgb(9, 197, 119);
+}
+
+.signup-btn:hover {
+  background: #0cc5b0;
+}
+
+/* 🔥 Added – Image full width, no gap */
+img {
+  display: block;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* If using slick slider */
+.slick-slider,
+.slick-slide img {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* NORMAL MOBILE MODE (below 768px) */
+@media (max-width: 1000px) {
+  .nav-links {
+    display: none !important;
+  }
+  .mobile-menu-button {
+    display: block !important;
+  }
+  .navbar-container {
+    padding: 0 10px;
+  }
+}

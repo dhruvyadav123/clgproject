@@ -1,0 +1,119 @@
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+/* Full Page Background with Radial Gradient */
+.auth-container {
+  width: 100vw;
+  min-height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  /* Remove any unwanted left offset */
+  left: 0;
+  right: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #ad3f07; /* Match Navbar background */
+  background-image: none;
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
+
+/* Glass Effect Box */
+.auth-box {
+  width: 350px;
+  max-width: 95vw;
+  padding: 30px 20px;
+  border-radius: 20px;
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 32px rgba(173, 63, 7, 0.25); /* Use Navbar color for shadow */
+  border: 2px solid #ad3f07;
+  text-align: center;
+  color: white;
+}
+
+/* Heading */
+.auth-box h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Input */
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  outline: none;
+}
+
+.auth-box input::placeholder {
+  color: #f5f5f5;
+}
+
+/* Button */
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #ffd700;
+  border: none;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.auth-btn:hover {
+  background: #ffcc00;
+  transform: scale(1.03);
+}
+
+/* Bottom link text */
+.auth-box p {
+  margin-top: 10px;
+  color: #fff;
+}
+
+.auth-box a {
+  color: #ffe066;
+  font-weight: bold;
+}
+
+/* Full Page Background Image */
+.auth-container {
+  width: 100vw;
+  min-height: 100vh;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  /* Overlay for better readability */
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: darken;
+}
