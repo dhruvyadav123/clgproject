@@ -1,8 +1,8 @@
-import Register from "../model/register.js"
-import bcrypt from "bcryptjs"
-import jwt from "jsonwebtoken"
+const Register = require("../model/register")
+const bcrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken")
 
-export const registerUser = async (req, res) => {
+exports.registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body
 
@@ -29,7 +29,7 @@ export const registerUser = async (req, res) => {
   }
 }
 
-export const loginUser = async (req, res) => {
+exports.loginUser = async (req, res) => {
   try {
     const { email, password } = req.body
 
@@ -45,7 +45,7 @@ export const loginUser = async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, email: user.email },
-      process.env.MY_SECRET,
+      process.env.SECRET_KEY,
       { expiresIn: "1d" }
     )
 

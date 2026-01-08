@@ -1,6 +1,6 @@
-import multer from "multer"
-import fs from "fs"
-import path from "path"
+const multer = require("multer")
+const fs = require("fs")
+const path = require("path")
 
 const uploadDir = "uploads"
 
@@ -17,4 +17,4 @@ const storage = multer.diskStorage({
   }
 })
 
-export default multer({ storage })
+module.exports = multer({ storage })

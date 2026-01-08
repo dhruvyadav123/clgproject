@@ -1,9 +1,9 @@
-import express from "express"
-import upload from "../middleware/multer.js"
-import {
+const express = require("express")
+const upload = require("../middleware/multer")
+const {
   createAdmission,
   getAllAdmissions
-} from "../controller/admissionController.js"
+} = require("../controller/admissionController")
 
 const router = express.Router()
 
@@ -19,4 +19,4 @@ router.post(
 
 router.get("/all", getAllAdmissions)
 
-export default router
+module.exports = router

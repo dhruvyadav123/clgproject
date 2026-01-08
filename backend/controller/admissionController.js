@@ -1,6 +1,6 @@
-import Admission from "../model/Admission.js"
+const Admission = require("../model/Admission")
 
-export const createAdmission = async (req, res) => {
+exports.createAdmission = async (req, res) => {
   try {
     const admission = new Admission({
       name: req.body.name,
@@ -14,7 +14,7 @@ export const createAdmission = async (req, res) => {
       idProof: req.files.idProof[0].filename
     })
 
-    await admission.save()   // 🔥 DB INSERT HERE
+    await admission.save()
 
     res.status(201).json({
       message: "Admission created successfully"
@@ -27,7 +27,7 @@ export const createAdmission = async (req, res) => {
   }
 }
 
-export const getAllAdmissions = async (req, res) => {
+exports.getAllAdmissions = async (req, res) => {
   try {
     const admissions = await Admission.find().sort({ createdAt: -1 })
     res.status(200).json(admissions)
