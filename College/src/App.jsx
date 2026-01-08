@@ -18,6 +18,7 @@ import Contact from './Pages/Contact'
 import Login from './Pages/Login'
 import Signup from "./Pages/Signup"
 import AdminDashboard from "./Pages/AdminDashboard"
+import AdminLayout from "./admin/AdminLayout"
 
 function App() {
   return (
@@ -48,7 +49,7 @@ function App() {
             path="/admin-dashboard"
             element={
               <ProtectedRoute>
-                <AdminDashboard />
+               <AdminLayout />
               </ProtectedRoute>
             }
           />
