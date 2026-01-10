@@ -20,14 +20,7 @@ const DashboardHome = () => {
         <div className="card">Total Users: {stats.totalUsers}</div>
 
         <style>
-          {`
-            .card {
-              background: white;
-              padding: 20px;
-              border-radius: 8px;
-              width: 200px;
-            }
-          `}
+       
         </style>
       </div>
     </>

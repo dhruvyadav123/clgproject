@@ -33,7 +33,7 @@ function Home() {
           <div className="slide">
             <img src={slide1} alt="Slide 1" />
             <div className="hero-text">
-              <h1>Welcome to CollegeName</h1>
+              <h1>Welcome to Institute</h1>
               <p>Empowering students for a brighter future</p>
               <Link to="/admissions" className="btn">Apply Now</Link>
             </div>

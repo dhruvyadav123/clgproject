@@ -7,26 +7,34 @@ const path = require("path")
 
 const authRoutes = require("./routes/authRoutes")
 const admissionRoutes = require("./routes/admissionRoutes")
-
+const dashboardRoutes = require("./routes/dashboardRoutes") // ✅ FIX
+const paymentRoutes = require("./routes/paymentRoutes")
 const app = express()
 
-// uploads folder
+// ================== UPLOADS FOLDER ==================
 const uploadPath = path.join(process.cwd(), "uploads")
 if (!fs.existsSync(uploadPath)) {
   fs.mkdirSync(uploadPath)
 }
 
+// ================== MIDDLEWARE ==================
 app.use(cors())
 app.use(express.json())
 app.use("/uploads", express.static(uploadPath))
 
-mongoose.connect(process.env.DATABASE_URL)
+// ================== DATABASE ==================
+mongoose
+  .connect(process.env.DATABASE_URL)
   .then(() => console.log("Database connected"))
-  .catch(err => console.log("DB Error:", err))
+  .catch((err) => console.log("DB Error:", err))
 
+// ================== ROUTES ==================
 app.use("/api/auth", authRoutes)
 app.use("/api/admission", admissionRoutes)
+app.use("/api/dashboard", dashboardRoutes)
+app.use("/api/payments", paymentRoutes)
 
+// ================== SERVER ==================
 const PORT = process.env.PORT || 1234
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)

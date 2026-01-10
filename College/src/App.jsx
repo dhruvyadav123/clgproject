@@ -20,44 +20,39 @@ import Signup from "./Pages/Signup"
 import AdminDashboard from "./Pages/AdminDashboard"
 import AdminLayout from "./admin/AdminLayout"
 
+
+import { useLocation } from 'react-router-dom'
+
 function App() {
+  const location = useLocation();
+  const isDashboard = location.pathname === '/admin-dashboard';
   return (
-    <div>
-      <Navbar />
-
-      <div style={{ minHeight: '80vh', padding: '20px' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/faculty" element={<Faculty />} />
-          <Route path="/science" element={<Science />} />
-          <Route path="/engineering" element={<Engineering />} />
-          <Route path="/arts" element={<Arts />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/admissions" element={<Admissions />} />
-
-          {/* 🔓 Public */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-
-         
-          
-
-          <Route
-            path="/admin-dashboard"
-            element={
-              <ProtectedRoute>
-               <AdminLayout />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </div>
-
-      <Footer />
-    </div>
+    <>
+      {isDashboard ? (
+        <AdminDashboard />
+      ) : (
+        <div>
+          <Navbar />
+          <div style={{ minHeight: '80vh', padding: '20px' }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/faculty" element={<Faculty />} />
+              <Route path="/science" element={<Science />} />
+              <Route path="/engineering" element={<Engineering />} />
+              <Route path="/arts" element={<Arts />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/admissions" element={<Admissions />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      )}
+    </>
   )
 }
 

@@ -1,3 +1,27 @@
+// Update Admission
+exports.updateAdmission = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const update = req.body;
+    const admission = await Admission.findByIdAndUpdate(id, update, { new: true });
+    if (!admission) return res.status(404).json({ message: "Admission not found" });
+    res.status(200).json(admission);
+  } catch (error) {
+    res.status(500).json({ message: "Error updating admission" });
+  }
+};
+
+// Delete Admission
+exports.deleteAdmission = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const admission = await Admission.findByIdAndDelete(id);
+    if (!admission) return res.status(404).json({ message: "Admission not found" });
+    res.status(200).json({ message: "Admission deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Error deleting admission" });
+  }
+};
 const Admission = require("../model/Admission")
 
 exports.createAdmission = async (req, res) => {

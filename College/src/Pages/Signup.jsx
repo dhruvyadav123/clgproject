@@ -1,46 +1,40 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import axios from "axios"
-import "./Auth.css"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "./Auth.css";
 
 function Signup() {
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: ""
-  })
+  });
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-
+    e.preventDefault();
     try {
       const res = await axios.post(
         "http://localhost:1111/api/auth/signup",
         formData
-      )
+      );
 
-      alert(res.data.message || "Signup successful")
-      navigate("/login")
+      alert(res.data.message || "Signup successful");
+      navigate("/users"); // Redirect to users list
     } catch (error) {
-      alert(
-        error.response?.data?.message ||
-        "Signup failed"
-      )
+      alert(error.response?.data?.message || "Signup failed");
     }
-  }
+  };
 
   return (
     <div className="auth-container">
       <div className="auth-box">
         <h2>Create Account</h2>
-
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -50,7 +44,6 @@ function Signup() {
             onChange={handleChange}
             required
           />
-
           <input
             type="email"
             name="email"
@@ -59,7 +52,6 @@ function Signup() {
             onChange={handleChange}
             required
           />
-
           <input
             type="password"
             name="password"
@@ -68,12 +60,8 @@ function Signup() {
             onChange={handleChange}
             required
           />
-
-          <button type="submit" className="auth-btn">
-            Signup
-          </button>
+          <button type="submit" className="auth-btn">Signup</button>
         </form>
-
         <p>
           Already have an account?{" "}
           <span
@@ -85,7 +73,7 @@ function Signup() {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;

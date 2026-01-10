@@ -10,8 +10,14 @@ function Navbar() {
    const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
   // Responsive check
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 1000);
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 1000;
+      setIsMobile(mobile);
+      setSidebarOpen(mobile); // Open sidebar on mobile, close on desktop
+    };
     window.addEventListener('resize', handleResize);
+    // Initial check
+    handleResize();
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
@@ -47,7 +53,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <div className="logo">
-            <Link to="/" onClick={GoTop}>CollegeName</Link>
+            <Link to="/" onClick={GoTop}>Institute</Link>
           </div>
           {/* Desktop Nav */}
           <div className="nav-links">
